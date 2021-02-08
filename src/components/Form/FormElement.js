@@ -2,12 +2,10 @@ import PropTypes from 'prop-types';
 import Label from './Label';
 import Input from './Input';
 import Radio from './Radio';
-import SearchLocation from './SearchLocation';
 import './form.css';
 
 const renderInput = (props) => {
-  if (props.type === 'radio') return <Radio { ...props} />;
-  if (props.type === 'searchlocation') return <SearchLocation {...props} />
+  if (props.type === 'radio') return <Radio { ...props} />
   return <Input { ...props} />;
 };
 
