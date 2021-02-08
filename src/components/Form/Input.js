@@ -11,7 +11,7 @@ const Input = ({ name, placeholder, error, maxLength, required, disabled, type, 
     name={name}
     type={type}
     maxLength={maxLength && maxLength}
-    required={required === "true" ? true : false}
+    required={required}
     placeholder={placeholder}
     value={value}
   />
