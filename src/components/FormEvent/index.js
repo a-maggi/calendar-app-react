@@ -23,16 +23,10 @@ const FormEvent = ({ handleVisible, handleSubmit, handleDelete, formData, setDra
     }
   )
 
-
   const [disabled, setDisabled] = useState(formData.title ? true : false);
   const [weatherReady, setWeatherReady] = useState(false);
   const [isDeletedAlert, setDeletedAlert] = useState(false);
 
-
-  useEffect(() => {
-    //if (formData.title) setDisabled(true);
-
-  }, [formData]);
 
   const onSubmit = (e) => {
     handleSubmit(event);
@@ -83,7 +77,6 @@ const FormEvent = ({ handleVisible, handleSubmit, handleDelete, formData, setDra
             value={event.title} />
           <FormElement
             label="Color"
-            name="color"
             type="radio"
             required={true}
             handleError={false}
