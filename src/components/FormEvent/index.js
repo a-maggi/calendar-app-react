@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import FormElement from 'components/Form/FormElement';
 import Icon from 'assets/icons';
 import Weather from 'components/Weather';
