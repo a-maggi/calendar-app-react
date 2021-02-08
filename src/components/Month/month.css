@@ -1,0 +1,38 @@
+.selected .day-number span {
+  background-color: #6273f0;
+  color: #fff
+}
+
+.day-box.disabled {
+  background: url('/src/assets/images/stripe.png');
+  color: #ddd;
+  cursor: not-allowed
+}
+
+.disabled .day-number {
+  color: #ddd
+}
+
+.day-box:not(.disabled) {
+  cursor: pointer;
+}
+
+.day-box {
+  position: relative;
+}
+
+.day-box .content {
+  min-height: 5rem;
+  position: relative;
+}
+
+.day-box:not(.disabled):hover .day-number span {
+  background: rgb(222, 232, 243);
+  color: rgb(80, 85, 230);
+}
+
+.day-box .day-number span {
+  padding: 4px 10px;
+  border-radius: 3px;
+  transition: .5s background;
+}

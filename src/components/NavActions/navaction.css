@@ -1,0 +1,30 @@
+.date-calendar {
+  min-width: 7rem;
+  text-align: center;
+  border-left: 1px solid #eaedf4;
+  border-right: 1px solid #eaedf4;
+  padding: 4px 10px;
+  color: #2c313a
+}
+
+.btn {
+  background-color: rgb(43, 98, 248);
+  color: #fff;
+  border-radius: 4px;
+  padding: 7px 10px;
+  box-shadow: 1px 1px 1px #023bd6;
+}
+.btn span {
+  margin-left: 5px;
+}
+.btn-left svg,.btn-right svg{
+  transition: .5s fill;
+  fill: #9ca4b5;
+}
+.btn-left:hover svg,.btn-right:hover svg{
+  fill: #000
+}
+.selector-month {
+  background: #f4f6fa;
+  border-radius: 4px;
+}

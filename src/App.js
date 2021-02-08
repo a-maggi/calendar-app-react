@@ -1,24 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from 'react';
+import { Context } from "./context";
+import { uuid } from "utils/maths";
+import { format } from "date-fns";
+import NavActions from 'components/NavActions';
+import Modal from 'components/Modal';
+import FormEvent from 'components/FormEvent';
+import Month from 'components/Month';
+import Layout from 'components/Layout';
 
 function App() {
+  
+  const { events, setEvent, draftEvent, setDraftEvent, currentMonth, selectedDate, showModalForm, addEvent, deleteEvent, setModalForm, setMonth } = useContext(Context); // Our values from Context
+
+
+  const changeModal = () => {
+    setModalForm(!showModalForm)
+  }
+
+  const onDateClick = (e, day) => {
+    e.stopPropagation();
+    setDraftEvent({ date: format(day, "yyyy-MM-dd") })
+    changeModal();
+  };
+
+
+  const handleSubmitEvent = (event) => {
+    // Logic to send to some api
+    // Here we only use the state management of React
+    if (!event._id)
+      addEvent({ ...event, _id: uuid() });
+    else
+      setEvent(event);
+  }
+
+  const handleDeleteEvent = (event) => {
+    // Logic to send to some api
+    // Here we only use the state management of React
+    deleteEvent(event);
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <NavActions currentMonth={currentMonth} setMonth={setMonth} showModal={changeModal} />
+      <Month currentMonth={currentMonth} events={events} onDateClick={onDateClick} selectedDate={selectedDate} />
+      <Modal visible={showModalForm} handleVisible={changeModal}>
+        <FormEvent handleSubmit={handleSubmitEvent} handleDelete={handleDeleteEvent} formData={draftEvent} handleVisible={changeModal} setDraftEvent={setDraftEvent} />
+      </Modal>
+    </Layout>
   );
 }
 

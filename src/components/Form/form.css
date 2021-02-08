@@ -1,0 +1,99 @@
+.inputField {
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  transition: all .2s ease-in-out;
+  color: #938ea6;
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 4px;
+  border-radius: 5px;
+}
+.Input {
+  margin-bottom: 1em;
+}
+.inputField {
+  border: 0;
+  padding: 4px;
+  border-radius: 0;
+  border-bottom: 1px solid #f0eff5;
+}
+
+.inputField-error {
+  border-color: #E62E2E;
+  color: #E62E2E;
+}
+
+.inputField-success {
+  border-color: #4CAF50;
+  color: #4CAF50;
+}
+
+.inputField:focus {
+  border-color: #7e60f8;
+  outline: none;
+}
+
+.inputField:focus .inputField::after {
+  border-color: #424242;
+  border-left-width: 4px;
+  outline: none;
+  content: '';
+  position: absolute;
+  left: 0;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #6e6982;
+  display: block;
+}
+label > small {
+  margin-left: 4px;
+  opacity: .5;
+}
+.radioComponent label{ 
+  margin: 0;
+}
+.radioInput {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-left: 10px;
+  position: relative;
+}
+.radioInput input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  bottom: 0;
+}
+.radioInput label {
+  margin: 8px 8px;
+  width: 1.7em;
+  height: 1.7em;
+  padding: 0;
+  background: #ebebeb;
+  color: #8f8f8f;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  border: 3px solid #fff;
+  border-radius: 100%;
+  text-indent: -10000px;
+}
+.radioInput:not(.disabled) label{
+  cursor: pointer;
+}
+.radioInput:not(.disabled) label:hover {
+  box-shadow: 0 0 2px 1px currentColor ;
+  color: #7a7a7a;
+}
+.radioInput input:checked + label {
+  box-shadow: 0 0 2px 1px currentColor ;
+  background: #c5cdc7;
+  color: white;
+}
